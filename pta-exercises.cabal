@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: cf91ed4429dd7548c96f8fdc0e041db287c3ba1613478acf2de7159c75470f21
+-- hash: 9588a0e62d9baef1d5cc0603fe847be33221330cae3894350d18685329a3c8ea
 
 name:           pta-exercises
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       DS2021Spring.IsomorphicTree
+      DS2021Spring.MaxSubseqSum
   other-modules:
       Paths_pta_exercises
   hs-source-dirs:
@@ -55,6 +56,7 @@ test-suite pta-exercises-test
   main-is: Spec.hs
   other-modules:
       DS2021Spring.IsomorphicTreeSpec
+      DS2021Spring.MaxSubseqSumSpec
       Paths_pta_exercises
   hs-source-dirs:
       test
