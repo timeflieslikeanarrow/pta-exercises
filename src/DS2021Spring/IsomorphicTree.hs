@@ -13,7 +13,7 @@ main = do
   else
     putStrLn "No"
 
-compareTree :: Tree String -> Tree String -> Bool
+compareTree :: (Eq a) => Tree a -> Tree a -> Bool
 compareTree (Node label1 left1 right1) (Node label2 left2 right2)  = label1 == label2 && ( 
                                                   compareTree left1 left2 && compareTree right1 right2 || 
                                                   compareTree left1 right2 && compareTree left2 right1)
