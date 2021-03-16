@@ -1,43 +1,32 @@
 module DS2021Spring.PopSequence (main, isPopSequence) where
 
 main :: IO ()
-main = do  
-  line1 <- getLine
-  let (m:n:k:_) = words line1
-  --putStrLn (show m ++ " " ++ show n ++ " " ++ show k)
-  handleLine (read m) (read n) (read k)
+main = do
+  line <- getLine
+  let (m:n:cases:_) = words line
+  processTestCases (read m) (read n) (read cases)
 
 isPopSequence :: Int -> Int -> [Int] -> Bool
-isPopSequence m n numbers = matchingSequence m n 1 ([], numbers)
+isPopSequence m n numbers = popSequenceIterator m n 1 ([], numbers, 0)
 
-matchingSequence :: Int -> Int -> Int -> ([Int], [Int]) -> Bool
-matchingSequence m n x (xs, ys) | x > n             = null xs && null ys
-                                | length (x:xs) > m = False
-                                | otherwise         = matchingSequence m n (x + 1) (matching (x:xs, ys)) 
+popSequenceIterator :: Int -> Int -> Int -> ([Int], [Int], Int) ->  Bool
+popSequenceIterator m n x (xs, ys, count) | x > n          =  count == 0 && null ys
+                                          | count == m     = False
+                                          | otherwise      = popSequenceIterator m n (x+1) (popOffMatchingPrefixe (x:xs, ys, count+1))
+                                                       
+popOffMatchingPrefixe :: (Eq a) => ([a], [a], Int) -> ([a], [a], Int)
+popOffMatchingPrefixe (x:xs, y:ys, count) | x == y = popOffMatchingPrefixe (xs, ys, count-1)
+popOffMatchingPrefixe (xs,   ys, count)            = (xs, ys, count)
 
-handleLine :: Int -> Int -> Int -> IO ()
-handleLine m n k = do
-      if k == 0 then 
-        return ()
-      else do
-        numbers <- readNumbers
-        let result = isPopSequence m n numbers
-        if result then
-          putStrLn "YES"
-        else
-          putStrLn "NO"
-        handleLine m n (k-1)
-
-
-readNumbers :: IO [Int]
-readNumbers = do
+processTestCases :: Int -> Int -> Int -> IO ()
+processTestCases m n k = do
+    if k == 0 then 
+      return ()
+    else do
       line <- getLine
-      return ((map read . words) line)
-       
-matching :: ([Int], [Int]) -> ([Int], [Int])
-matching ([], xs) = ([], xs)
-matching (xs, []) = (xs, [])
-matching (x:xs, y:ys) = if x == y then matching (xs, ys) else (x:xs, y:ys)
-
-
-  
+      let numbers = map read $ words line
+      if isPopSequence m n numbers then
+        putStrLn "YES"
+      else
+        putStrLn "NO"
+      processTestCases m n (k-1)
