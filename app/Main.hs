@@ -7,6 +7,7 @@ import qualified DS2021Spring.PolyAddAndMultiply as PolyAM
 import qualified DS2021Spring.ReversingLinkedList as ReverseLL 
 import qualified DS2021Spring.ListingLeaves as ListLeaves
 import qualified DS2021Spring.PopSequence as PopSeq
+import qualified DS2021Spring.TreeTraversal as Trav 
 
 main :: IO ()
-main = PopSeq.main
+main = Trav.main
