@@ -8,6 +8,7 @@ import qualified DS2021Spring.ReversingLinkedList as ReverseLL
 import qualified DS2021Spring.ListingLeaves as ListLeaves
 import qualified DS2021Spring.PopSequence as PopSeq
 import qualified DS2021Spring.TreeTraversal as Trav 
+import qualified ReversiblePrime as RevPrime 
 
 main :: IO ()
-main = Trav.main
+main = RevPrime.main

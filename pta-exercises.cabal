@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 198fbaa84c7ea6bf3ea1839434e204603337fdee89c8b1d1f4790b67400c69c4
+-- hash: 78f2fed16aa890624986ee586281e961e1b3a78fbc31b8edded84920afd108c4
 
 name:           pta-exercises
 version:        0.1.0.0
@@ -35,6 +35,7 @@ library
       DS2021Spring.PopSequence
       DS2021Spring.ReversingLinkedList
       DS2021Spring.TreeTraversal
+      ReversiblePrime
   other-modules:
       Paths_pta_exercises
   hs-source-dirs:
@@ -69,6 +70,7 @@ test-suite pta-exercises-test
       DS2021Spring.PopSequenceSpec
       DS2021Spring.ReversingLinkedListSpec
       DS2021Spring.TreeTraversalSpec
+      ReversiblePrimeSpec
       Paths_pta_exercises
   hs-source-dirs:
       test
