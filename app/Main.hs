@@ -10,6 +10,6 @@ import qualified DS2021Spring.PopSequence as PopSeq
 import qualified DS2021Spring.TreeTraversal as Trav 
 import qualified ReversiblePrime as RevPrime 
 import qualified NumberDoubling as NumDouble 
-
+import qualified PalindromicNumber as PalinNum 
 main :: IO ()
-main = NumDouble.main
+main = PalinNum.main
