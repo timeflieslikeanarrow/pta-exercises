@@ -9,6 +9,7 @@ import qualified DS2021Spring.ListingLeaves as ListLeaves
 import qualified DS2021Spring.PopSequence as PopSeq
 import qualified DS2021Spring.TreeTraversal as Trav 
 import qualified ReversiblePrime as RevPrime 
+import qualified NumberDoubling as NumDouble 
 
 main :: IO ()
-main = RevPrime.main
+main = NumDouble.main
