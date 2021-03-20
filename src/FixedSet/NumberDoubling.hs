@@ -1,4 +1,4 @@
-module NumberDoubling where
+module FixedSet.NumberDoubling where
 
 import Data.List
 

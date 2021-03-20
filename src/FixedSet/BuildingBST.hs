@@ -1,4 +1,4 @@
-module BuildingBST where
+module FixedSet.BuildingBST where
 
 import Data.List 
 

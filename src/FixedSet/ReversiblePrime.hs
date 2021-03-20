@@ -1,4 +1,4 @@
-module ReversiblePrime where
+module FixedSet.ReversiblePrime where
 
 import Data.List
 

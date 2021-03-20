@@ -1,4 +1,4 @@
-module PalindromicNumber where
+module FixedSet.PalindromicNumber where
 
 main :: IO ()
 main = interact process

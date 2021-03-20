@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 782dc109d451f568634fd7bda43ce07d56ed064004a56c0364553fabdfb7eebe
+-- hash: a92e5352981e2ac3652498eb6ff594e6b5e3fe351a62efc146e91b6081d63cb0
 
 name:           pta-exercises
 version:        0.1.0.0
@@ -27,7 +27,6 @@ source-repository head
 
 library
   exposed-modules:
-      BuildingBST
       DS2021Spring.IsomorphicTree
       DS2021Spring.ListingLeaves
       DS2021Spring.MaxSubseqSum
@@ -36,9 +35,10 @@ library
       DS2021Spring.PopSequence
       DS2021Spring.ReversingLinkedList
       DS2021Spring.TreeTraversal
-      NumberDoubling
-      PalindromicNumber
-      ReversiblePrime
+      FixedSet.BuildingBST
+      FixedSet.NumberDoubling
+      FixedSet.PalindromicNumber
+      FixedSet.ReversiblePrime
   other-modules:
       Paths_pta_exercises
   hs-source-dirs:
@@ -65,7 +65,6 @@ test-suite pta-exercises-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      BuildingBSTSpec
       DS2021Spring.IsomorphicTreeSpec
       DS2021Spring.ListingLeavesSpec
       DS2021Spring.MaxSubseqSumSpec
@@ -74,9 +73,10 @@ test-suite pta-exercises-test
       DS2021Spring.PopSequenceSpec
       DS2021Spring.ReversingLinkedListSpec
       DS2021Spring.TreeTraversalSpec
-      NumberDoublingSpec
-      PalindromicNumberSpec
-      ReversiblePrimeSpec
+      FixedSet.BuildingBSTSpec
+      FixedSet.NumberDoublingSpec
+      FixedSet.PalindromicNumberSpec
+      FixedSet.ReversiblePrimeSpec
       Paths_pta_exercises
   hs-source-dirs:
       test

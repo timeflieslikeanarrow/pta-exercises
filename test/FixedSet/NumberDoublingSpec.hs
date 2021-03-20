@@ -1,9 +1,9 @@
-module NumberDoublingSpec where
+module FixedSet.NumberDoublingSpec where
 
 import Test.Hspec
 import Test.QuickCheck
 
-import NumberDoubling
+import FixedSet.NumberDoubling
 
 spec :: Spec
 spec = do

@@ -1,9 +1,9 @@
-module PalindromicNumberSpec where
+module FixedSet.PalindromicNumberSpec where
 
 import Test.Hspec
 import Test.QuickCheck
 
-import PalindromicNumber
+import FixedSet.PalindromicNumber
 
 spec :: Spec
 spec = do

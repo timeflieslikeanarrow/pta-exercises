@@ -1,10 +1,10 @@
-module BuildingBSTSpec where
+module FixedSet.BuildingBSTSpec where
 
 import Test.Hspec
 import Test.QuickCheck
 
 import Data.List 
-import BuildingBST
+import FixedSet.BuildingBST
 
 tree0 :: Tree Int
 tree0 = Node 0 (Node 0 (Node 0 Empty Empty) 

@@ -1,9 +1,9 @@
-module ReversiblePrimeSpec where
+module FixedSet.ReversiblePrimeSpec where
 
 import Test.Hspec
 import Test.QuickCheck
 
-import ReversiblePrime
+import FixedSet.ReversiblePrime
 
 spec :: Spec
 spec = do
