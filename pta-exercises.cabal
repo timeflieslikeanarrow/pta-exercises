@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ef0b4966aa876dc722845f718708c11c651a250d1edad6ddfb6d906696b35a0a
+-- hash: 782dc109d451f568634fd7bda43ce07d56ed064004a56c0364553fabdfb7eebe
 
 name:           pta-exercises
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      BuildingBST
       DS2021Spring.IsomorphicTree
       DS2021Spring.ListingLeaves
       DS2021Spring.MaxSubseqSum
@@ -64,6 +65,7 @@ test-suite pta-exercises-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      BuildingBSTSpec
       DS2021Spring.IsomorphicTreeSpec
       DS2021Spring.ListingLeavesSpec
       DS2021Spring.MaxSubseqSumSpec

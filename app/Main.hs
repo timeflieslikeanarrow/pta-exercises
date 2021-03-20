@@ -11,5 +11,7 @@ import qualified DS2021Spring.TreeTraversal as Trav
 import qualified ReversiblePrime as RevPrime 
 import qualified NumberDoubling as NumDouble 
 import qualified PalindromicNumber as PalinNum 
+import qualified BuildingBST as BST 
+
 main :: IO ()
-main = PalinNum.main
+main = BST.main
