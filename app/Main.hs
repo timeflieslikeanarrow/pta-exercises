@@ -12,6 +12,7 @@ import qualified FixedSet.ReversiblePrime as RevPrime
 import qualified FixedSet.NumberDoubling as NumDouble 
 import qualified FixedSet.PalindromicNumber as PalinNum 
 import qualified FixedSet.BuildingBST as BST 
+import qualified DS2021Spring.SameTree as SameT 
 
 main :: IO ()
-main = BST.main
+main = SameT.main
