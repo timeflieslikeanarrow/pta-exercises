@@ -14,24 +14,24 @@ process input = intercalate " " $ map show $ traverseTree ([tree],[])
               nodes = map read $ words second
               tree = buildTree n (sort nodes)
 
-
-getFullCount :: Int -> Int
-getFullCount n = until (> n) (*2) 1
+nextFullCount :: Int -> Int
+nextFullCount n = until (> n) (*2) 1
 
 buildTree :: Int -> [Int] -> Tree Int
 buildTree n [] = Empty
-buildTree n xs = Node (xs !! leftCount) (buildTree leftCount (take leftCount xs)) (buildTree rightCount (drop (leftCount + 1) xs))
-                  where fullCount = getFullCount n
+buildTree n xs = Node label (buildTree leftNodeCount (take leftNodeCount xs)) (buildTree rightNodeCount (drop (leftNodeCount + 1) xs))
+                  where fullCount = nextFullCount n
                         previousFullCount = fullCount `div` 2 - 1
                         fullBottomCount = fullCount - 1 - previousFullCount
                         leftBottomCount = min (n - previousFullCount) (fullBottomCount `div` 2)
-                        leftCount = previousFullCount `div` 2 + leftBottomCount
-                        rightCount = n - leftCount - 1
+                        leftNodeCount = previousFullCount `div` 2 + leftBottomCount
+                        rightNodeCount = n - leftNodeCount - 1
+                        label = xs !! leftNodeCount
 
 type Queue a = ([a], [a])
 
 traverseTree :: Queue (Tree Int) -> [Int]
-traverseTree ([],[])  = []
-traverseTree ([], ys) = traverseTree (reverse ys, [])
-traverseTree (Empty:xs, ys) = traverseTree (xs, ys)
+traverseTree ([],[])             = []
+traverseTree ([], ys)            = traverseTree (reverse ys, [])
+traverseTree (Empty:xs, ys)      = traverseTree (xs, ys)
 traverseTree (Node x l r:xs, ys) = x: traverseTree (xs, r:l:ys) 
