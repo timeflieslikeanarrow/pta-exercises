@@ -14,6 +14,7 @@ import qualified FixedSet.PalindromicNumber as PalinNum
 import qualified FixedSet.BuildingBST as BST 
 import qualified DS2021Spring.SameTree as SameT 
 import qualified DS2021Spring.CompleteBST as CBST 
+import qualified DS2021Spring.AVLRoot as AVL
 
 main :: IO ()
-main = CBST.main
+main = AVL.main
