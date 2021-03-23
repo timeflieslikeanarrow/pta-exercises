@@ -46,32 +46,43 @@ rotateRight t       = t
 
 compareWithLeftChild :: Int -> Tree Int -> Ordering
 compareWithLeftChild n (Node _ _ (Node label _ _ _ ) _) = n `compare` label
-compareWithLeftChild _ _                                 = EQ
+compareWithLeftChild _ _                                = EQ
 
 compareWithRightChild :: Int -> Tree Int -> Ordering
 compareWithRightChild n (Node _ _ _ (Node label _ _ _ )) = n `compare` label
-compareWithRightChild _ _                                 = EQ
+compareWithRightChild _ _                                = EQ
 
 singleton :: Int -> Tree Int
 singleton label = Node label 1 Empty Empty
+
+handleLeftInsertion :: Int -> Tree Int -> Tree Int
+handleLeftInsertion n node@(Node label h l r) = if balance > 1 then
+                                                    case n `compareWithLeftChild` node of
+                                                      EQ -> node
+                                                      LT -> rotateRight node
+                                                      GT -> let leftChild = rotateLeft l in rotateRight (Node label h leftChild r)
+                                                else
+                                                    node
+                                                where balance = balanceFactor node
+handleLeftInsertion _ t = t 
+
+
+handleRightInsertion :: Int -> Tree Int -> Tree Int
+handleRightInsertion n node@(Node label h l r) =  if balance < (-1) then
+                                                      case n `compareWithRightChild` node of
+                                                        EQ -> node
+                                                        LT -> let rightChild = rotateRight r in rotateLeft (Node label h l rightChild)
+                                                        GT -> rotateLeft node
+                                                  else
+                                                      node
+                                                  where balance = balanceFactor node
+
+handleRightInsertion _ t = t
 
 insertNode :: Int -> Tree Int -> Tree Int
 insertNode n Empty                = singleton n
 insertNode n t@(Node label h l r) = if n == label 
                                     then t
-                                    else let node = if n < label
-                                                    then Node label h (insertNode n l) r 
-                                                    else Node label h l                (insertNode n r)
-                                            in let node2@(Node newlabel newh newl newr) = updateHeight node
-                                            in let balance = balanceFactor node2
-                                            in if balance > 1 then
-                                                    case n `compareWithLeftChild` node2 of
-                                                      EQ -> node2
-                                                      LT -> rotateRight node2
-                                                      GT -> let leftChild = rotateLeft newl in rotateRight (Node newlabel newh leftChild newr)
-                                                else if balance < (-1) then
-                                                    case n `compareWithRightChild` node2 of
-                                                      EQ -> node2
-                                                      LT -> let rightChild = rotateRight newr in rotateLeft (Node newlabel newh newl rightChild)
-                                                      GT -> rotateLeft node2
-                                                else node2
+                                    else if n < label
+                                         then handleLeftInsertion  n $ updateHeight $ Node label h (insertNode n l) r 
+                                         else handleRightInsertion n $ updateHeight $ Node label h l                (insertNode n r)
