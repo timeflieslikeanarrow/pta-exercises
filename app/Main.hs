@@ -17,4 +17,4 @@ import qualified DS2021Spring.CompleteBST as CBST
 import qualified DS2021Spring.AVLRoot as AVL
 
 main :: IO ()
-main = AVL.main
+main = SameT.main3

@@ -19,3 +19,13 @@ spec = do
     it "compare trees" $ do
       compareTree (buildTree [3, 1, 4, 2]) (buildTree [3, 4, 1, 2]) `shouldBe` True 
       compareTree (buildTree [3, 1, 4, 2]) (buildTree [3, 2, 4, 1]) `shouldBe` False      
+
+  describe "compare lists directly without building trees" $ do
+    it "compare lists" $ do
+      compareList [3, 1, 4, 2] [3, 4, 1, 2] `shouldBe` True 
+      compareList [3, 1, 4, 2] [3, 2, 4, 1] `shouldBe` False 
+
+  describe "compare tree and list" $ do
+    it "compare tree and list" $ do
+      compareTreeWithList (buildTree2 [3, 1, 4, 2]) [3, 4, 1, 2] `shouldBe` True 
+      compareTreeWithList (buildTree2 [3, 1, 4, 2]) [3, 2, 4, 1] `shouldBe` False 
