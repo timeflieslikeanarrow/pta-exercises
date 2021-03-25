@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d187f1fe1321902910377e54848e3183d74d88b90950cc58379d2b78c38371ee
+-- hash: 12bddb27e46074b2f53213ff7c61cd95ff8755c2bf887ce988f94c3c48adb58b
 
 name:           pta-exercises
 version:        0.1.0.0
@@ -42,6 +42,7 @@ library
       FixedSet.NumberDoubling
       FixedSet.PalindromicNumber
       FixedSet.ReversiblePrime
+      FixedSet.SpellItRight
   other-modules:
       Paths_pta_exercises
   hs-source-dirs:
@@ -83,6 +84,7 @@ test-suite pta-exercises-test
       FixedSet.NumberDoublingSpec
       FixedSet.PalindromicNumberSpec
       FixedSet.ReversiblePrimeSpec
+      FixedSet.SpellItRightSpec
       Paths_pta_exercises
   hs-source-dirs:
       test
