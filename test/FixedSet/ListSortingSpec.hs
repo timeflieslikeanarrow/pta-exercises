@@ -9,7 +9,7 @@ spec :: Spec
 spec = do
   describe "buildRecord" $ do
     it "000002 James 90" $
-      buildRecord "000002 James 90" `shouldBe` StudentRecord "000002" "James" 90
+      buildRecord "000002 James 90" `shouldBe` ("000002", "James", 90)
   
   describe "sortCriteria 2" $ do
     it "000007 James 85 vs 000010 Amy 90" $
