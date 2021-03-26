@@ -16,6 +16,7 @@ import qualified DS2021Spring.SameTree as SameT
 import qualified DS2021Spring.CompleteBST as CBST 
 import qualified DS2021Spring.AVLRoot as AVL
 import qualified FixedSet.SpellItRight as Spell
+import qualified FixedSet.ListSorting as LS 
 
 main :: IO ()
-main = Spell.main
+main = LS.main

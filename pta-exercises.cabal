@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 12bddb27e46074b2f53213ff7c61cd95ff8755c2bf887ce988f94c3c48adb58b
+-- hash: 625cd55b1bbd20db47411160617efa510df2ee965b4b2b93c1c5c6c4bd743939
 
 name:           pta-exercises
 version:        0.1.0.0
@@ -39,6 +39,7 @@ library
       DS2021Spring.SameTree
       DS2021Spring.TreeTraversal
       FixedSet.BuildingBST
+      FixedSet.ListSorting
       FixedSet.NumberDoubling
       FixedSet.PalindromicNumber
       FixedSet.ReversiblePrime
@@ -81,6 +82,7 @@ test-suite pta-exercises-test
       DS2021Spring.SameTreeSpec
       DS2021Spring.TreeTraversalSpec
       FixedSet.BuildingBSTSpec
+      FixedSet.ListSortingSpec
       FixedSet.NumberDoublingSpec
       FixedSet.PalindromicNumberSpec
       FixedSet.ReversiblePrimeSpec
